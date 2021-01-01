@@ -16,21 +16,21 @@ JSONPointer
 
 A RFC6902 compliant JSON Patch PHP implementation
 
-#License
+# License
 JSONPatch is licensed under the MIT license.
 
-#Installation
+# Installation
 
     composer require gamringer/php-json-patch
 
-##Tests
+## Tests
 
     composer install
     phpunit
     
-#Documentation
+# Documentation
 
-##Operations can be constructed and applied independently
+## Operations can be constructed and applied independently
 ```php
 <?php
 
@@ -40,7 +40,7 @@ $operation->apply($target);
 
 ```
 
-##Operations can also be constructed from a JSON string
+## Operations can also be constructed from a JSON string
 ```php
 <?php
 
@@ -48,7 +48,7 @@ $operation = \gamringer\JSONPatch\Operation\Test::fromDecodedJSON(json_decode('{
 
 ```
 
-##A patch can be constructed from a set of operations
+## A patch can be constructed from a set of operations
 ```php
 <?php
 
@@ -58,14 +58,14 @@ $patch->addOperation(new \gamringer\JSONPatch\Operation\Add('/foo', 'bar'));
 $patch->addOperation(new \gamringer\JSONPatch\Operation\Test('/foo', 'bar'));
 ```
 
-##A patch can also be constructed from a JSON string
+## A patch can also be constructed from a JSON string
 ```php
 <?php
 
 $patch = \gamringer\JSONPatch\Patch::fromJSON('[{"op":"add","path":"/foo","value":"bar"},{"op":"test","path":"/foo","value":"bar"}]');
 ```
 
-##A patch can be applied
+## A patch can be applied
 ```php
 <?php
 
